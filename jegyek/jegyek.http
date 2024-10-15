@@ -1,0 +1,6 @@
+@jegyek_HostAddress = http://localhost:5113
+
+GET {{jegyek_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
