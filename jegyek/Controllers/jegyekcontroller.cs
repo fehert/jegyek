@@ -82,6 +82,40 @@ namespace jegyek.Controllers
             con.Connection.Close();
             return NotFound();
         }
+        [HttpPut("{id}")]
+        public ActionResult Put(Guid id, int jegy, string leírás)
+        {
+            con.Connection.Open();
+            string sql = "UPDATE jegyek SET Jegy = @Jegy, Leírás = @Leírás WHERE Azon = @Azon";
+            MySqlCommand cmd = new MySqlCommand(sql, con.Connection);
+            cmd.Parameters.AddWithValue("@Azon", id);
+            cmd.Parameters.AddWithValue("@Jegy", jegy);
+            cmd.Parameters.AddWithValue("@Leírás", leírás);
+            int rowsAffected = cmd.ExecuteNonQuery();
+            con.Connection.Close();
+
+            if (rowsAffected == 0)
+                return NotFound();
+
+            return NoContent();
+        }
+
+        [HttpDelete("{id}")]
+        public ActionResult Delete(Guid id)
+        {
+            con.Connection.Open();
+            string sql = "DELETE FROM jegyek WHERE Azon = @Azon";
+            MySqlCommand cmd = new MySqlCommand(sql, con.Connection);
+            cmd.Parameters.AddWithValue("@Azon", id);
+            int rowsAffected = cmd.ExecuteNonQuery();
+            con.Connection.Close();
+
+            if (rowsAffected == 0)
+                return NotFound();
+
+            return NoContent();
+        }
+
 
     }
 
