@@ -49,5 +49,73 @@
         "StatusCode": 200
       }
     ]
+  },
+  {
+    "ContainingType": "jegyek.Controllers.jegyekcontroller",
+    "Method": "Get",
+    "RelativePath": "jegyek/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "jegyek.Models.jegy",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "jegyek.Controllers.jegyekcontroller",
+    "Method": "Put",
+    "RelativePath": "jegyek/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "jegy",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "le\u00EDr\u00E1s",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "jegyek.Controllers.jegyekcontroller",
+    "Method": "Delete",
+    "RelativePath": "jegyek/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
   }
 ]

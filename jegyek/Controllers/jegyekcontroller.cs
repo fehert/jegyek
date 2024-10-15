@@ -44,7 +44,7 @@ namespace jegyek.Controllers
             con.Connection.Open();
             Guid Id = Guid.NewGuid();
             DateTime Létrehozásideje = DateTime.Now;
-            string sql = $"INSERT INTO `jegyek` (`Azon`, `Jegy`, `Leírás`, `Létrehozásideje`) VALUES ('{Id}',{Jegy},'{Leírás}'','{Létrehozásideje.ToString("yyyy-MM-dd HH:mm:ss")}')";
+            string sql = $"INSERT INTO `jegyek` (`Azon`, `Jegy`, `Leírás`, `Létrehozásideje`) VALUES ('{Id}',{Jegy},'{Leírás}','{Létrehozásideje.ToString("yyyy-MM-dd HH:mm:ss")}')";
             MySqlCommand cmd = new MySqlCommand(sql, con.Connection);
             cmd.ExecuteNonQuery();
             con.Connection.Close();
