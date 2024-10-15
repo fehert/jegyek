@@ -57,6 +57,32 @@ namespace jegyek.Controllers
             };
             return result;
         }
+        [HttpGet("{id}")]
+        public ActionResult<jegy> Get(Guid id)
+        {
+            con.Connection.Open();
+            string sql = "SELECT * FROM jegyek WHERE Azon = @Azon";
+            MySqlCommand cmd = new MySqlCommand(sql, con.Connection);
+            cmd.Parameters.AddWithValue("@Azon", id);
+            MySqlDataReader reader = cmd.ExecuteReader();
+
+            if (reader.Read())
+            {
+                var result = new jegy
+                {
+                    Azon = reader.GetGuid(0),
+                    Jegy = reader.GetInt32(1),
+                    Leírás = reader.GetString(2),
+                    Létrehozásideje = reader.GetDateTime(3),
+                };
+                con.Connection.Close();
+                return result;
+            }
+
+            con.Connection.Close();
+            return NotFound();
+        }
+
     }
 
 }
