@@ -20,7 +20,7 @@ namespace jegyek
         public connect()
         {
             Host = "localhost";
-            Database = "shop";
+            Database = "jegy";
             Username = "root";
             Password = "";
             ConnectionString = "SERVER=" + Host + ";DATABASE=" + Database + ";UID=" + Username + ";PASSWORD=" + Password + ";SslMode=None";

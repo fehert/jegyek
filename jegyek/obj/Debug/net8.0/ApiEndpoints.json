@@ -1,0 +1,53 @@
+[
+  {
+    "ContainingType": "jegyek.Controllers.jegyekcontroller",
+    "Method": "Get",
+    "RelativePath": "jegyek",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[jegyek.Models.jegy, jegyek, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "jegyek.Controllers.jegyekcontroller",
+    "Method": "Post",
+    "RelativePath": "jegyek",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Jegy",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Le\u00EDr\u00E1s",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "jegyek.Models.jegy",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  }
+]
